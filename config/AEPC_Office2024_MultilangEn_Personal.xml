@@ -1,0 +1,51 @@
+<Configuration ID="8e81497e-ef9f-489b-ad4f-70438d1ce5c6">
+  <Info Description="Asia Economic Prosperity Capital - Personal Multilingual Office LTSC 2024&#xA;Streamlined component configuration with multilingual proofing support&#xA;Primary: English (US) | Secondary: Chinese (Simplified &amp; Traditional) + 11 additional language proofing tools&#xA;Excluded: Access, Skype for Business, OneDrive Desktop, Publisher&#xA;32-bit Volume License deployment with user-based activation and automatic updates" />
+  <Add OfficeClientEdition="32" Channel="PerpetualVL2024" MigrateArch="TRUE">
+    <Product ID="ProPlus2024Volume" PIDKEY="XJ2XN-FW8RK-P4HMP-DKDBV-GCVGB">
+      <Language ID="en-us" />
+      <Language ID="MatchPreviousMSI" />
+      <ExcludeApp ID="Access" />
+      <ExcludeApp ID="Lync" />
+      <ExcludeApp ID="OneDrive" />
+      <ExcludeApp ID="Publisher" />
+    </Product>
+    <Product ID="VisioPro2024Volume" PIDKEY="B7TN8-FJ8V3-7QYCP-HQPMV-YY89G">
+      <Language ID="en-us" />
+      <Language ID="MatchPreviousMSI" />
+      <ExcludeApp ID="Access" />
+      <ExcludeApp ID="Lync" />
+      <ExcludeApp ID="OneDrive" />
+      <ExcludeApp ID="Publisher" />
+    </Product>
+    <Product ID="ProofingTools">
+      <Language ID="zh-cn" />
+      <Language ID="zh-tw" />
+      <Language ID="en-gb" />
+      <Language ID="en-us" />
+      <Language ID="fr-ca" />
+      <Language ID="fr-fr" />
+      <Language ID="de-de" />
+      <Language ID="el-gr" />
+      <Language ID="he-il" />
+      <Language ID="it-it" />
+      <Language ID="ja-jp" />
+      <Language ID="ko-kr" />
+      <Language ID="pt-br" />
+      <Language ID="pt-pt" />
+      <Language ID="ru-ru" />
+      <Language ID="es-mx" />
+      <Language ID="es-es" />
+    </Product>
+  </Add>
+  <Property Name="SharedComputerLicensing" Value="0" />
+  <Property Name="FORCEAPPSHUTDOWN" Value="TRUE" />
+  <Property Name="DeviceBasedLicensing" Value="0" />
+  <Property Name="SCLCacheOverride" Value="0" />
+  <Property Name="AUTOACTIVATE" Value="1" />
+  <Updates Enabled="TRUE" />
+  <RemoveMSI />
+  <AppSettings>
+    <Setup Name="Company" Value="Asia Economic Prosperity Capital" />
+  </AppSettings>
+  <Display Level="Full" AcceptEULA="TRUE" />
+</Configuration>

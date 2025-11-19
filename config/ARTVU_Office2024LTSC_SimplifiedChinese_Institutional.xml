@@ -1,0 +1,40 @@
+<Configuration ID="d8675502-d474-4c20-8ca8-4b9359424ed5">
+  <Info Description="Augmented Reality Toolkit Virtual University - Office LTSC 2024 Simplified Chinese Deployment&#xA;Simplified Chinese (PRC) as primary language with Full installation&#xA;Secondary language support: Traditional Chinese (Taiwan), English (US &amp; UK), Japanese, Korean proofing tools&#xA;Excluded: Access, Skype for Business, OneDrive Desktop, Publisher&#xA;32-bit Volume License deployment with automatic updates and user-based activation&#xA;Standardized configuration for institutional deployment across campus infrastructure" />
+  <Add OfficeClientEdition="32" Channel="PerpetualVL2024" MigrateArch="TRUE">
+    <Product ID="ProPlus2024Volume" PIDKEY="XJ2XN-FW8RK-P4HMP-DKDBV-GCVGB">
+      <Language ID="zh-cn" />
+      <Language ID="MatchPreviousMSI" />
+      <ExcludeApp ID="Access" />
+      <ExcludeApp ID="Lync" />
+      <ExcludeApp ID="OneDrive" />
+      <ExcludeApp ID="Publisher" />
+    </Product>
+    <Product ID="VisioPro2024Volume" PIDKEY="B7TN8-FJ8V3-7QYCP-HQPMV-YY89G">
+      <Language ID="zh-cn" />
+      <Language ID="MatchPreviousMSI" />
+      <ExcludeApp ID="Access" />
+      <ExcludeApp ID="Lync" />
+      <ExcludeApp ID="OneDrive" />
+      <ExcludeApp ID="Publisher" />
+    </Product>
+    <Product ID="ProofingTools">
+      <Language ID="zh-cn" />
+      <Language ID="zh-tw" />
+      <Language ID="en-gb" />
+      <Language ID="en-us" />
+      <Language ID="ja-jp" />
+      <Language ID="ko-kr" />
+    </Product>
+  </Add>
+  <Property Name="SharedComputerLicensing" Value="0" />
+  <Property Name="FORCEAPPSHUTDOWN" Value="TRUE" />
+  <Property Name="DeviceBasedLicensing" Value="0" />
+  <Property Name="SCLCacheOverride" Value="0" />
+  <Property Name="AUTOACTIVATE" Value="1" />
+  <Updates Enabled="TRUE" />
+  <RemoveMSI />
+  <AppSettings>
+    <Setup Name="Company" Value="Augmented Reality Toolkit Virtual University" />
+  </AppSettings>
+  <Display Level="Full" AcceptEULA="TRUE" />
+</Configuration>

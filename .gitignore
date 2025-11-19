@@ -1,0 +1,125 @@
+# Office LTSC Deployment Toolkit - Git Ignore Rules
+
+# ===== Windows System Files =====
+Thumbs.db
+Desktop.ini
+.DS_Store
+ehthumbs.db
+*.lnk
+
+# ===== Office Components =====
+# Exclude the actual Office setup.exe to avoid uploading large files
+setup.exe
+
+# ===== Sensitive Configuration Files =====
+# Exclude XML configs that might contain:
+# - Specific institutional deployment keys
+# - Personalized settings
+# - Internal network paths
+# - Custom licensing information
+
+# Only exclude if you have actual deployment configs
+# Comment out if you want to include template configs
+config/*-actual.xml
+config/*-production.xml
+config/*-deployment.xml
+!config/*-template.xml
+!config/example-*.xml
+
+# ===== Office Installation Logs =====
+# Temporary logs created during installation
+*.log
+installation_logs/
+deployment_logs/
+
+# ===== PowerShell Output =====
+# Temporary PowerShell files
+$PSHOME/
+*.PSM1
+
+# ===== IDE and Editor Files =====
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Visual Studio
+.vs/
+.sln
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim/Neovim
+.vim/
+.nvim/
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# ===== OS-specific Files =====
+# macOS
+.AppleDouble
+.LSOverride
+._*
+.apdisk
+
+# Linux
+.directory
+
+# Windows
+$RECYCLE.BIN/
+Thumbs.db
+
+# ===== Build and Distribution =====
+# Build artifacts (if packaging)
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Compiled Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ===== Temporary Files =====
+# Temporary installation scripts
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+
+# ===== Development =====
+# Node modules (if using any Node-based tools)
+node_modules/
+package-lock.json
+
+# pip/virtualenv
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# ===== Documentation =====
+# Exclude locally generated documentation (if any)
+docs/_build/
+docs/.doctrees/
+
+# ===== Custom Exclusions =====
+# Add institution-specific exclusions here if needed
+# Example:
+# institutional-configs/
+# internal-documentation/

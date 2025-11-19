@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Office LTSC Configuration Template
+
+This is a template file showing the basic structure.
+Copy and modify this file for your institutional needs.
+
+IMPORTANT: Update the Configuration ID to match your institution and purpose.
+Example: AEPC_Office2024_SimplifiedChinese_Professional.xml
+         ARTVU_Office2024_Multilingual_Standard.xml
+-->
+<Configuration ID="YOUR_INSTITUTION_NAME">
+  <!-- 
+    ============================================
+    OFFICE PRODUCT SELECTION
+    ============================================
+    
+    Add element specifies:
+    - OfficeClientEdition: "32" for 32-bit, "64" for 64-bit
+    - Channel: "PerpetualVL2024" for LTSC 2024
+    
+    Supported Product IDs:
+    - ProPlus2024Volume (Professional Plus - Full Suite)
+    - Standard2024Volume (Standard - Word, Excel, PowerPoint, Outlook, Publisher)
+    - ProjectStd2024Volume (Project Standard)
+    - ProjectPro2024Volume (Project Professional)
+    - VisioStd2024Volume (Visio Standard)
+    - VisioPro2024Volume (Visio Professional)
+  -->
+  <Add OfficeClientEdition="64" Channel="PerpetualVL2024">
+    <Product ID="ProPlus2024Volume">
+      <!-- 
+        ============================================
+        LANGUAGE SELECTION
+        ============================================
+        
+        The FIRST language listed becomes the primary UI language.
+        Additional languages are installed as secondary options.
+        
+        Common Language Codes:
+        - zh-cn: Simplified Chinese (China)
+        - zh-tw: Traditional Chinese (Taiwan)
+        - en-us: English (United States)
+        - en-gb: English (United Kingdom)
+        - ja-jp: Japanese
+        - ko-kr: Korean
+        - fr-fr: French
+        - es-es: Spanish
+        - de-de: German
+        - it-it: Italian
+        - ru-ru: Russian
+        
+        Example 1 - Primary: Simplified Chinese
+      -->
+      <Language ID="zh-cn" />
+      
+      <!-- 
+        Example 2 - Add English as secondary language
+      -->
+      <Language ID="en-us" />
+      
+      <!-- 
+        Example 3 - Add more languages as needed
+      -->
+      <!-- <Language ID="ja-jp" /> -->
+      <!-- <Language ID="ko-kr" /> -->
+    </Product>
+  </Add>
+
+  <!-- 
+    ============================================
+    INSTALLATION DISPLAY SETTINGS
+    ============================================
+    
+    Level: "Full" shows installation progress UI
+           "None" performs silent installation
+    AcceptEULA: "TRUE" automatically accepts license agreement
+  -->
+  <Display Level="Full" AcceptEULA="TRUE" />
+
+  <!-- 
+    ============================================
+    REMOVE PREVIOUS OFFICE INSTALLATIONS
+    ============================================
+    
+    Use this to remove older Office versions (2016, 2019, etc.)
+    before installing LTSC 2024.
+    
+    Uncomment if upgrading from older versions.
+  -->
+  <RemoveMSI />
+
+  <!-- 
+    ============================================
+    AUTOMATIC UPDATES
+    ============================================
+    
+    For LTSC (perpetual) licensing:
+    - Enabled="FALSE" - Recommended for stable deployments
+    - Enabled="TRUE" - For receiving security/feature updates
+    
+    Note: LTSC receives updates less frequently than Microsoft 365
+  -->
+  <Updates Enabled="FALSE" />
+
+  <!-- 
+    ============================================
+    INSTALLATION PROPERTIES
+    ============================================
+    
+    These properties control specific installation behaviors.
+  -->
+  
+  <!-- 
+    FORCEAPPSHUTDOWN: Force close running Office apps during installation
+    - FALSE (Recommended): Safer, prompts user to close apps
+    - TRUE: Automatically closes apps (may cause data loss)
+  -->
+  <Property Name="FORCEAPPSHUTDOWN" Value="FALSE" />
+
+  <!-- 
+    SharedComputerLicensing: For shared/lab computers with multiple users
+    - 0 (Default): Single-user mode
+    - 1: Multi-user shared computer licensing enabled
+  -->
+  <Property Name="SharedComputerLicensing" Value="0" />
+
+  <!-- 
+    AUTOACTIVATE: Automatic licensing activation
+    - 0: Disable auto-activation
+    - 1: Enable auto-activation (requires KMS server or MAK)
+    
+    Default: 1 (enabled)
+  -->
+  <Property Name="AUTOACTIVATE" Value="1" />
+
+  <!-- 
+    ============================================
+    APPLICATION SETTINGS (OPTIONAL)
+    ============================================
+    
+    These settings customize Office behavior after installation.
+    Uncomment and modify as needed for your institution.
+    
+    Syntax: <User Key="registry_path" Name="value_name" Value="value_data" />
+  -->
+  
+  <!-- 
+    Example: Disable "Tips" feature on startup
+  <AppSettings>
+    <User Key="software\microsoft\office\16.0\common\general" 
+          Name="showcustomuitips" 
+          Value="0" />
+  </AppSettings>
+  -->
+
+  <!-- 
+    Example: Set Excel default file format
+    51 = Excel 97-2003 format
+    51 = Excel 2007+ format
+  <AppSettings>
+    <User Key="software\microsoft\office\16.0\excel\options" 
+          Name="defaultformat" 
+          Value="51" />
+  </AppSettings>
+  -->
+
+  <!-- 
+    Example: Multiple settings
+  <AppSettings>
+    <User Key="software\microsoft\office\16.0\common\general" 
+          Name="showcustomuitips" 
+          Value="0" />
+    <User Key="software\microsoft\office\16.0\excel\options" 
+          Name="defaultformat" 
+          Value="51" />
+  </AppSettings>
+  -->
+
+</Configuration>
+
+<!-- 
+  ============================================
+  HELPFUL NOTES FOR CUSTOMIZATION
+  ============================================
+
+  1. FILE NAMING CONVENTION:
+     Use clear names that identify the configuration:
+     - INSTITUTION_ProductEdition_Languages_Date.xml
+     Examples:
+     - AEPC_Office2024_ProfessionalPlus_ZhCn_En.xml
+     - ARTVU_Office2024_Standard_ZhCn.xml
+
+  2. TESTING BEFORE DEPLOYMENT:
+     powershell.exe -Command "& 'C:\path\to\setup.exe' /download 'config.xml' 'C:\OfflineCache'"
+     This downloads components without installing.
+
+  3. VALIDATION:
+     - Check XML syntax (proper quotes, closing tags)
+     - Verify product IDs match supported products
+     - Test language codes for typos
+     - Validate registry paths for AppSettings
+
+  4. INSTITUTIONAL CUSTOMIZATION:
+     - Modify product edition (Standard vs Professional Plus)
+     - Adjust language configuration for your users
+     - Add regional settings as needed
+     - Configure update policy
+
+  5. VERSION TRACKING:
+     - Keep dated backups of working configurations
+     - Use version control (Git) to track changes
+     - Document changes in commit messages
+     - Include effective dates in comments
+
+  ============================================
+  RESOURCES
+  ============================================
+
+  Microsoft Official Documentation:
+  https://learn.microsoft.com/en-us/deployoffice/office-deployment-tool-configuration-options
+
+  Language Codes:
+  https://learn.microsoft.com/en-us/deployoffice/office-deployment-tool-configuration-options#language-element
+
+  Product IDs and Edition Reference:
+  https://learn.microsoft.com/en-us/deployoffice/office-deployment-tool-configuration-options#product-element
+
+-->
