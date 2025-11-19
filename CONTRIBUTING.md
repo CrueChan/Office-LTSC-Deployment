@@ -327,7 +327,7 @@ When contributing:
 
 ## Questions?
 
-- Check [README](README.md) and [README.zh-CN.md](README.zh-CN.md)
+- Check [README](README.md)
 - Review existing issues and discussions
 - Ask in a new issue with the `question` label
 - Check [Troubleshooting](README.md#troubleshooting) section
