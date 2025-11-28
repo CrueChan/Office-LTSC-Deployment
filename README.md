@@ -111,6 +111,20 @@ $Configs = @{
 }
 ```
 
+## 🔑 KMS Configuration Script
+
+This repository now includes a universal batch script (`AutoActivate.bat`) designed to automate the KMS client configuration for Office LTSC.
+
+### Features
+* **Smart Path Detection**: Automatically scans all common installation paths (C2R & MSI) to locate `ospp.vbs`.
+* **Auto-Elevation**: Automatically requests Administrator privileges if run as a standard user.
+* **Universal Support**: Compatible with Office 2016, 2019, 2021, and 2024 LTSC.
+
+### Usage
+1.  Complete the Office installation.
+2.  Run `AutoActivate.bat`.
+3.  The script will detect your Office version, set the KMS host, and apply the activation command automatically.
+
 ## ⚙️ System Requirements
 
 | Component | Requirement |
